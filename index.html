@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Nike Shoes Store</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f5f5;
+      color: #333;
+    }
+
+    header {
+      background: black;
+      color: white;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      font-size: 24px;
+      letter-spacing: 2px;
+      color: #e50914;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #e50914;
+    }
+
+    .hero {
+      background: url("https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/w_1920,c_limit/cb2dbe5b-fc39-4689-9b43-7fcb3ac5e86e/nike-just-do-it.jpg") no-repeat center/cover;
+      height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+    }
+
+    .hero h2 {
+      font-size: 48px;
+      margin: 0;
+    }
+
+    .hero p {
+      font-size: 18px;
+      margin: 10px 0;
+    }
+
+    .btn {
+      background: #e50914;
+      color: white;
+      padding: 12px 25px;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #b00710;
+    }
+
+    .products {
+      padding: 40px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      padding: 20px;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+
+    .card h3 {
+      margin: 15px 0 10px;
+    }
+
+    .reviews {
+      background: #fff;
+      padding: 40px;
+      text-align: center;
+    }
+
+    .reviews h2 {
+      margin-bottom: 20px;
+    }
+
+    .review {
+      margin: 15px auto;
+      max-width: 600px;
+      font-style: italic;
+      color: #555;
+    }
+
+    footer {
+      background: black;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    #cart {
+      background: #e50914;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>NIKE STORE</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#products">Products</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact">Contact</a>
+      <span id="cart">Cart: 0</span>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div>
+      <h2>Step Into Greatness</h2>
+      <p>Explore the latest Nike shoes designed for performance and style.</p>
+      <a href="#products" class="btn">Shop Now</a>
+    </div>
+  </section>
+
+  <section id="products" class="products">
+    <div class="card">
+      <img src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/77d87de8-5010-43de-8d8a-6a72bb6a2e52/air-max-270-mens-shoes-KkLcGR.png" alt="Nike Air Max">
+      <h3>Nike Air Max 270</h3>
+      <p>₹8,999</p>
+      <button class="btn" onclick="addToCart()">Add to Cart</button>
+    </div>
+    <div class="card">
+      <img src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/6ddc20b1-8769-42a4-82f5-29128ca06e3b/air-force-1-07-mens-shoes-b19Crd.png" alt="Nike Air Force">
+      <h3>Nike Air Force 1</h3>
+      <p>₹7,499</p>
+      <button class="btn" onclick="addToCart()">Add to Cart</button>
+    </div>
+    <div class="card">
+      <img src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/6647f9e8-080a-423a-bf77-2d8b2d8a6b9d/zoom-fly-5-mens-road-running-shoes-rMMZJx.png" alt="Nike Zoom Fly">
+      <h3>Nike Zoom Fly 5</h3>
+      <p>₹12,999</p>
+      <button class="btn" onclick="addToCart()">Add to Cart</button>
+    </div>
+  </section>
+
+  <section id="reviews" class="reviews">
+    <h2>What Our Customers Say</h2>
+    <p class="review">"The Nike Air Max feels super comfortable. Perfect for daily wear!" – Rahul</p>
+    <p class="review">"Nike Zoom Fly gave me the speed I wanted for marathons!" – Ananya</p>
+    <p class="review">"Stylish and durable, Air Force 1 is my all-time favorite." – Karthik</p>
+  </section>
+
+  <footer id="contact">
+    <p>Contact Us: support@nikestore.com | +91-9876543210</p>
+    <p>© 2025 Nike Store. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    let cartCount = 0;
+    function addToCart() {
+      cartCount++;
+      document.getElementById("cart").innerText = "Cart: " + cartCount;
+      alert("Item added to cart!");
+    }
+  </script>
+
+</body>
+</html>
